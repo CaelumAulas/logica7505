@@ -1,21 +1,38 @@
 <meta charset="utf-8">
 <h1>Comparativo de Mobilidade:</h1><br><br>
-
-Distância: 20km<br><br>
-
-Uber:<br>
-Valor gasto:R$ 15,00<br>
-Tempo previsto:50min<br><br>
-
-Carro:<br>
 <script>
-var valorCombustivel = parseFloat(prompt("Digite o valor do combustível"));
-var valorEstacionamento=parseFloat(prompt("Digite o valor do estacionamento"));
-document.write("Valor combustível: R$"+valorCombustivel.toFixed(2).replace(".",",")+"<br>");
-document.write("Valor estacionamento: R$"+valorEstacionamento+"<br>");
+    var texto;
+        function pegaNumeroDecimal() {
+            return parseFloat(prompt(texto));
+        }
+    var valor;
+    function formataValorDecimal() {
+        return valor.toFixed(2).replace(".",",");
+    }
+    texto = "Digite a distância";
+    var distancia = pegaNumeroDecimal();
+    valor = distancia;
+    document.write("Distância: "+formataValorDecimal()+"km<br><br>");
+    document.write("Uber:<br>");
+    texto = "Digite o valor gasto com Uber";
+    var valorTotalUber = pegaNumeroDecimal();
+    valor = valorTotalUber;
+    document.write("Valor gasto:R$ "+formataValorDecimal()+"<br>");
+    var tempoUber=parseFloat(prompt("Digite o tempo do Uber"));
+    document.write("Tempo previsto:"+tempoUber+"min<br><br>");
+    document.write("Carro:<br>");
+    texto = "Digite o valor do combustível";
+    var valorCombustivel = pegaNumeroDecimal();
+    texto = "Digite o estacionamento";
+    var valorEstacionamento=pegaNumeroDecimal();
+    valor = valorCombustivel;
+document.write("Valor combustível:R$"+formataValorDecimal()+"<br>");
+valor = valorEstacionamento;
+document.write("Valor estacionamento: R$"+formataValorDecimal()+"<br>");
 
 var valorTotalCarro=valorCombustivel+valorEstacionamento;
-document.write("Valor gasto: R$"+valorTotalCarro+"<br>");
+valor = valorTotalCarro;
+document.write("Valor gasto: R$"+formataValorDecimal()+"<br>");
 
 var tempoCarro=45;
 document.write("Tempo previsto:"+tempoCarro+"min");
