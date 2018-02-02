@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<script src="http://192.168.141.204:8080/funcao.js"></script>
+<script>
+    var peso = pegaNumeroDecimal("Digite o seu peso");
+    var altura = pegaNumeroDecimal("Digite a sua altura");
+
+    var imc = peso/(altura*altura);
+    document.write("peso: "+formataValorDecimal(peso));
+    document.write(" altura: "+formataValorDecimal(altura)+"<br>");
+    document.write("Seu IMC é " + formataValorDecimal(imc)+"<br>");
+    if (imc < 18.5) {
+        document.write("Você está abaixo do peso, coma mais!"+"<br>");
+    }
+    if (imc >= 35) {
+        document.write("você está com sobrepeso, procure um nutricionista"+"<br>")
+    }
+    if (imc >= 18.5 && imc < 35) {
+        document.write("você tem o peso ideal<br>");
+    }
+</script>
