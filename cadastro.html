@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+<h3>Cadastro:</h3>
+<script src="http://192.168.141.204:8080/funcao.js"></script>
+<script>
+    var nome = prompt("Nome do cliente");
+    var diaNasc = parseInt(prompt("Dia nascimento do cliente"));
+    var mesNasc = parseInt(prompt("Mês nascimento do cliente"));
+    var anoNasc = parseInt(prompt("Ano nascimento do cliente"));
+    var diaNasc;
+    var mesNasc;
+    var anoNasc;
+    var peso = pegaNumeroDecimal("Peso do cliente");
+    var altura = pegaNumeroDecimal("Altura do cliente");
+    var imc = peso/(altura*altura);
+    var diaAtual = 5;
+    var mesAtual = 2;
+    var anoAtual = 2018;
+    var idade;
+    var possivelIdade = anoAtual - anoNasc;
+    
+    if (mesNasc > mesAtual) {
+        idade = possivelIdade-1;
+    }
+    if (mesNasc < mesAtual) {
+        idade = possivelIdade;
+    }
+    if (mesNasc == mesAtual) {
+        if (diaNasc > diaAtual) {
+            idade = possivelIdade-1;
+        }
+        if (diaNasc == diaAtual) {
+            idade = possivelIdade;
+            document.write("<h6>Parabéns</h6>");
+        }
+        if (diaNasc < diaAtual) {
+            idade = possivelIdade;
+        }
+    }    
+
+    document.write("Nome: "+nome+"<br>");
+    document.write("Peso: "+formataValorDecimal(peso)+"kg<br>");
+    document.write("Altura: "+formataValorDecimal(altura)+"m<br>");
+    document.write("IMC: "+ formataValorDecimal(imc) + "<br>");
+    document.write("Idade: "+idade+" anos<br>");
+</script>

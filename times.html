@@ -1,0 +1,23 @@
+<meta charset="utf-8">
+<script>
+    var valorVitoria = 3;
+    var valorEmpate = 1;
+    var vitorias1 = parseInt(prompt("Quantas vitórias teve o time 1"));
+    var empates1 = parseInt(prompt("Quantos empates teve o time 1"));
+    var pontos1 = valorVitoria*vitorias1+valorEmpate*empates1;
+    var vitorias2 = parseInt(prompt("Quantas vitórias teve o time 2"));
+    var empates2 = parseInt(prompt("Quantos empates teve o time 2"));
+    var pontos2 = valorVitoria*vitorias2+valorEmpate*empates2;
+    document.write("Time 1: " +pontos1+" pontos<br>");
+    document.write("Time 2: " +pontos2+" pontos<br><br>");
+
+    if (pontos1 > pontos2) {
+        document.write("Time 1 está ganhando!<br>");
+    }
+    if (pontos2 > pontos1) {
+        document.write("Time 2 está ganhando<br>");
+    }
+    if (pontos1 == pontos2) {
+        document.write("Estão empatados<br>");
+    }
+</script>
