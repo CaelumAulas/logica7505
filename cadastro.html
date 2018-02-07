@@ -3,12 +3,12 @@
 <script src="http://192.168.141.204:8080/funcao.js"></script>
 <script>
     var nome = prompt("Nome do cliente");
-    var diaNasc = parseInt(prompt("Dia nascimento do cliente"));
-    var mesNasc = parseInt(prompt("Mês nascimento do cliente"));
-    var anoNasc = parseInt(prompt("Ano nascimento do cliente"));
-    var diaNasc;
-    var mesNasc;
-    var anoNasc;
+    var dataNasc = prompt("Data nascimento do cliente - ex: dd/mm/aaaa");
+    var dataNascSeparada = dataNasc.split("/");
+    var diaNasc = parseInt(dataNascSeparada[0]);
+    var mesNasc = parseInt(dataNascSeparada[1]);
+    var anoNasc = parseInt(dataNascSeparada[2]);
+
     var peso = pegaNumeroDecimal("Peso do cliente");
     var altura = pegaNumeroDecimal("Altura do cliente");
     var imc = peso/(altura*altura);

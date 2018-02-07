@@ -1,0 +1,26 @@
+<script>
+    var numeroCerto = Math.round(Math.random()*10);
+    console.log(numeroCerto);
+    var numeroChute = parseInt(prompt("Digite um número de 0 a 10"));
+    var contador=0;
+    while (contador<3&&(isNaN(numeroChute)==true || numeroChute<0 || numeroChute>10)){
+        alert("Você não digitou número válido");
+        numeroChute = parseInt(prompt("Digite um número de 0 a 10"));
+        contador = contador+1;
+    }
+
+
+    if (numeroChute == numeroCerto) {
+        document.write("Acertou!!!");
+    } else {
+        document.write("Errrrrrrrrou!!"+numeroCerto);
+    }
+
+    //if (numeroChute != numeroCerto) {
+    //    document.write("Errrrrrrrrou!!");
+    //}
+    //comentário, escrever qualquer coisa
+    //if (numeroChute > numeroCerto || numeroChute < numeroCerto) {
+    //    document.write("Errrrrrrrrou!!");
+    //}
+</script>
