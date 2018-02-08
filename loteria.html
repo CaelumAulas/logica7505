@@ -1,20 +1,70 @@
 <script>
-    var numeroCerto = Math.round(Math.random()*10);
-    console.log(numeroCerto);
-    var numeroChute = parseInt(prompt("Digite um número de 0 a 10"));
-    var contador=0;
-    while (contador<3&&(isNaN(numeroChute)==true || numeroChute<0 || numeroChute>10)){
-        alert("Você não digitou número válido");
-        numeroChute = parseInt(prompt("Digite um número de 0 a 10"));
-        contador = contador+1;
+    function pegaNumeroValido(posicao) {
+        var contador=0;
+        numerosChutes.push(parseInt(prompt("Digite um número de 0 a 60")));
+        var chuteDoMomento = numerosChutes[posicao];
+        while (isNaN(chuteDoMomento)==true||chuteDoMomento<0||chuteDoMomento>60){
+            alert("Você não digitou número válido");
+            numerosChutes[posicao] = parseInt(prompt("Digite um número de 0 a 60"));
+            contador = contador+1;
+            if (contador >= 3) {
+                break; // sai do loop
+            }
+        }
     }
+    var numerosCertos = [];
+    /*
+    var contaSorteio = 0;
+    while (contaSorteio <= 5) {
+       numerosCertos.push(Math.round(Math.random()*60));
+       contaSorteio = contaSorteio + 1;
+    }
+    */
+    var contaSorteio;
+    for (contaSorteio=0;contaSorteio<=5;contaSorteio=contaSorteio+1){
+        numerosCertos.push(Math.round(Math.random()*60));
+    }
+    console.log(numerosCertos);
 
 
-    if (numeroChute == numeroCerto) {
-        document.write("Acertou!!!");
-    } else {
-        document.write("Errrrrrrrrou!!"+numeroCerto);
+   // var numeroChute = parseInt(prompt("Digite um número de 0 a 60"));
+    var numerosChutes = []; 
+    // pra quinta-feira: criar while pra pedir 6 números
+    //pedir um número pro usuario
+    pegaNumeroValido(0);
+    //pedir o segundo numero
+    pegaNumeroValido(1);
+
+    console.log("chutes:"+numerosChutes);
+    /*for (var numeroChute = parseInt(prompt("Digite um número de 0 a 60"));
+    isNaN(numeroChute)==true || numeroChute<0 || numeroChute>60;
+    numeroChute = parseInt(prompt("Digite um número de 0 a 60"))){
+            alert("Você não digitou número válido");
+            contador = contador+1;
+            if (contador >= 3) {
+            break; // sai do loop
+        }
+    }*/
+
+    /*
+    var posicao=0;
+    while (posicao <=5) {
+        if (numeroChute == numerosCertos[posicao]) {
+            document.write("Acertou!!!");
+            break;
+        }   
+        posicao = posicao + 1;
     }
+    */
+    for (var posicao = 0;posicao<=5;posicao=posicao+1){
+        if (numerosChutes[0] == numerosCertos[posicao]) {
+            document.write("Acertou!!!");
+            break;
+        } 
+    }
+    if (posicao > 5) {
+        document.write("Errrrrrrrrou!!");
+    }    
 
     //if (numeroChute != numeroCerto) {
     //    document.write("Errrrrrrrrou!!");
